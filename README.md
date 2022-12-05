@@ -6,12 +6,12 @@
 
 ## Installation + API keys
 
-### npm package
+### pip package
 
-Install the package from npm with your favorite package manager
+Install with pip
 
-```js
-npm install @cherrry-ai/cherrry-js
+```python
+pip install cherrry
 ```
 
 ### API Keys
@@ -32,20 +32,14 @@ They're intended to be use client-side and have read-only privilages.
 
 ### Initalize
 
-```js
-const CherrryClient = require("@cherrry-ai/cherrry-js");
-```
-
-or
-
-```js
-import CherrryClient from "@cherrry-ai/cherrry-js";
+```python
+from cherrry import CherrryClient
 ```
 
 initialize the client
 
-```js
-const client = new CherrryClient(api_key);
+```python
+client = CherrryClient("your_api_key")
 ```
 
 ## Concepts
@@ -66,15 +60,15 @@ These fields are also JSON object literals, where the keys can be strings with a
 
 ### Create Table
 
-```js
-var { success, error } = await client.create_table("example_table");
+```python
+[success, error] = client.create_table("table_name")
 ```
 
 ### Insert a Doc
 
 Documents must be of the following form
 
-```js
+```python
 {
     "text": {
         "a name for your text": "your desired text in a string"
@@ -90,39 +84,39 @@ Documents must be of the following form
 
 for example:
 
-```js
-var { data, error } = await client.from("recipes").insert({
-    text: {
-        name: "Octopus Cherry Pie"
+```python
+[data, error] = client.table("recipes").insert({
+    "text": {
+        "name": "Octopus Cherry Pie"
     },
-    image: {
-        preview: "https://i.imgur.com/lFC8p0L.jpeg"
+    "image": {
+        "preview": "https://i.imgur.com/lFC8p0L.jpeg"
     },
-    metadata: {
-        author_name: "Davy Jones",
-        author_email: "octo@pus.com"
+    "metadata": {
+        "author_name": "Davy Jones",
+        "author_email": "octo@pus.com"
     }
-});
+})
 ```
 
 ### Search
 
-```js
-var { data, error } = await client
-    .from("blogs")
-    .search({ prompt: "sea creature desert", size: 1, search_type: "image" });
+```python
+[data, error] = client
+    .table("blogs")
+    .search({ "prompt": "sea creature desert", "size": 1, "search_type": "image" });
 ```
 
 ### Get Doc by ID
 
 The ID of documents are returned in the responses of `/search` or `/doc`
 
-```js
-var { data, error } = await client.from("blogs").doc("1234");
+```python
+[data, error] = client.table("blogs").doc("1234")
 ```
 
 ### Delete a Doc
 
-```js
-var { success, error } = await client.from("blogs").delete("1234");
+```python
+[success, error] = client.table("blogs").delete("1234")
 ```

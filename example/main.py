@@ -53,7 +53,7 @@ def deleteTest():
 def main():
     # createTableTest()
     # insertTest()
-    # searchTest()
+    searchTest()
     # docTest()
     # deleteTest()
 
