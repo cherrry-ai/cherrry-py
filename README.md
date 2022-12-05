@@ -4,11 +4,13 @@
 
 <img width="644" alt="CleanShot 2022-11-30 at 21 40 41@2x" src="https://user-images.githubusercontent.com/42971022/204960579-371f96b7-1281-4c7a-b95a-81e4c3139020.png">
 
+[App](https://cherrry.com/dashboard) | [Docs](https://cherrry.com/docs) | [Blog](https://cherrry.com/blog)
+
 ## Installation + API keys
 
 ### pip package
 
-Install with pip
+Install with pip. [See it on pypi](https://pypi.org/project/cherrry)
 
 ```python
 pip install cherrry

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cherrry",                     
-    version="0.0.1",                        
+    version="0.0.2",                        
     author="Lukas Kelsey-Friedemann",                     
     description="Cherrry Semantic Search API SDK",
     long_description=long_description,      
